@@ -11,6 +11,7 @@ productRouter.get("/", async (req, res) => {
     res.send(products);
   } catch (err) {
     console.log(err);
+    res.status(500).send({ msg: "Failed to fetch products" });
   }
 });
 
