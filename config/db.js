@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.set("StrictQuery", false);
+// mongoose.set("StrictQuery", false);
 
 require("dotenv").config();
 const connection = mongoose.connect(process.env.mongoURL);
