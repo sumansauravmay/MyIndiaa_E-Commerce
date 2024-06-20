@@ -1,13 +1,16 @@
 const express = require("express");
 const { PaymentModel } = require("../models/payment.model");
 const paymentRouter = express.Router();
+require("dotenv").config();
 
 // Set your secret key. Remember to switch to your live secret key in production.
 // See your keys here: https://dashboard.stripe.com/apikeys
 //payment Intent
-const stripe = require("stripe")(
-  "sk_test_51PTlIz06qAZY9jhqW9uehslpw8aU6mK1apH7cqVdv4jxzrjsvdHUOwPdUsfHBynzW5XmNqQ63j2CDYpoXKZifbuJ00VNgYP4p4"
-);
+const stripe = require("stripe")(process.env.stripekey);
+
+// const stripe = require("stripe")(
+//   "sk_test_51PTlIz06qAZY9jhqW9uehslpw8aU6mK1apH7cqVdv4jxzrjsvdHUOwPdUsfHBynzW5XmNqQ63j2CDYpoXKZifbuJ00VNgYP4p4"
+// );
 
 paymentRouter.post("/payment", async (req, res) => {
   const { order, amount } = req.body;
