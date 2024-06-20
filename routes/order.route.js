@@ -5,10 +5,12 @@ const { OrderModel } = require("../models/order.model");
 const orderRouter = express.Router();
 
 orderRouter.post("/orders", async (req, res) => {
-  const { userId, products, totalAmount } = req.body;
+  const { user, products, totalAmount } = req.body;
   try {
-    const newOrder = new OrderModel({ user: userId, products, totalAmount });
+    const newOrder = new OrderModel({ user, products, totalAmount });
+    console.log(newOrder);
     await newOrder.save();
+    
     res.status(200).send({ msg: "Order placed successfully", order: newOrder });
   } catch (err) {
     console.error(err);
@@ -27,5 +29,4 @@ orderRouter.get("/orders/:userId", async (req, res) => {
   }
 });
 
-
-module.exports={orderRouter};
+module.exports = { orderRouter };
