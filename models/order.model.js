@@ -8,5 +8,5 @@ const orderSchema = mongoose.Schema({
   orderDate: { type: Date, default: Date.now },
 });
 
-const OrderModel = mongoose.model("Orders", orderSchema);
+const OrderModel = mongoose.model("orders", orderSchema);
 module.exports = { OrderModel };
