@@ -80,6 +80,33 @@ Clone the repo
 }
 ```
 
+3. Products
+
+- Get all the product 
+
+```bash
+ GET /
+```
+
+
+- Add new product
+
+```bash
+ POST /add
+```
+
+- Request body
+
+```bash
+ "image": "https://avatars.githubusercontent.com/u/101393663?s=48&v=4",
+  "title": "Jeans",
+  "description": "This is jeans",
+  "Price": 4000,
+```
+
+
+
+
 
 
 
