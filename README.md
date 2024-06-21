@@ -155,13 +155,30 @@ Clone the repo
 ```
 # Payment
 
+- Get all the payments
 
+```bash
+ GET /payment
+```
+- Get payments by id
 
+```bash
+ POST /payment/:id
+```
 
+- Request for a payment
 
+```bash
+ POST /payment
+```
 
-
-
+```bash
+ {
+  "order":"6673f2d2cdf49cdb26cc7697",
+  "amount":4000,
+  "paymentDate":"Date.now()"
+}
+```
 
 
 
