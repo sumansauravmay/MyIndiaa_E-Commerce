@@ -183,7 +183,13 @@ Clone the repo
 ```
 
 
-
+```bash
+1. API Development
+2. Database Integration
+3. Mock Third-Party Integrations
+4. Security Measure
+.5 Scalability and Performance Optimization 
+```
 
 
 
