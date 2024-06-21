@@ -30,7 +30,7 @@ productRouter.post("/add", authenticate, (req, res) => {
   }
 });
 
-productRouter.patch("/update/:id", async (req, res) => {
+productRouter.patch("/update/:id", authenticate, async (req, res) => {
   const payload = req.body;
   const ID = req.params.id;
 
@@ -43,7 +43,7 @@ productRouter.patch("/update/:id", async (req, res) => {
   }
 });
 
-productRouter.delete("/delete/:id", async (req, res) => {
+productRouter.delete("/delete/:id", authenticate, async (req, res) => {
   const ID = req.params.id;
   try {
     await ProductModel.findByIdAndDelete({ _id: ID });
