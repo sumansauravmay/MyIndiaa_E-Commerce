@@ -101,3 +101,25 @@ Clone the repo
   "Price": 4000
 }
 ```
+
+- Update by id
+
+
+```bash
+ PATCH /update/:id
+```
+
+
+- Delete by id
+
+
+```bash
+ PATCH /delete/:id
+```
+
+
+# Orders
+
+
+
+
