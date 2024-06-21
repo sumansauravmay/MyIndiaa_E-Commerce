@@ -43,6 +43,44 @@ Clone the repo
   https://myindiaa-e-commerce.onrender.com/
 ```
 
+# Start the server:
+
+- npm start 
+- The server will be running at http://localhost:4000
+
+
+# API Documentation
+
+1. Registration
+
+```bash
+  Register: POST /register
+```
+```bash
+  {
+  "name": "Suman",
+  "email": "suman@gmail.com",
+  "password": "suman@123"
+}
+```
+
+
+
+2. Login (Authentication)
+
+```bash
+  Register: POST /login
+```
+
+
+```bash
+ {
+  "email": "suman@gmail.com",
+  "password": "suman@123"
+}
+```
+
+
 
 
 
