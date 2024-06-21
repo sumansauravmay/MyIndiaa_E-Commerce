@@ -15,7 +15,7 @@ const stripe = require("stripe")(
 //   "sk_test_51PTlIz06qAZY9jhqW9uehslpw8aU6mK1apH7cqVdv4jxzrjsvdHUOwPdUsfHBynzW5XmNqQ63j2CDYpoXKZifbuJ00VNgYP4p4"
 // );
 
-paymentRouter.get("/payment", async (req, res) => {
+paymentRouter.get("/payment", authenticate, async (req, res) => {
   try {
     const paymentIntents = await stripe.paymentIntents.list({ limit: 3 });
     res.status(200).json(paymentIntents);
@@ -24,9 +24,7 @@ paymentRouter.get("/payment", async (req, res) => {
   }
 });
 
-
-
-paymentRouter.post("/payment", async (req, res) => {
+paymentRouter.post("/payment", authenticate, async (req, res) => {
   const { order, amount } = req.body;
 
   try {
@@ -48,20 +46,34 @@ paymentRouter.post("/payment", async (req, res) => {
   }
 });
 
-paymentRouter.post("/payment/:id", async (req, res) => {
-  const { id } = req.params;
+// paymentRouter.post("/payment/:id", authenticate, async (req, res) => {
+//   const { id } = req.params;
+// console.log("id", id);
+//   if (!id) {
+//     return res.status(401).json({ message: "Payment Intent ID is required." });
+//   }
+//   try {
+//     const paymentIntent = await stripe.paymentIntents.retrieve(id);
+//     res.status(200).json(paymentIntent);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).send({ msg: "Failed to capturing payment intent" });
+//   }
+// });
 
-  if (!id) {
-    return res.status(401).json({ message: "Payment Intent ID is required." });
+paymentRouter.post("/payment/:id", authenticate, async (req, res) => {
+  const { id: intentId } = req.params;
+
+  if (!intentId) {
+    return res.status(400).json({ message: "Payment Intent ID is required." });
   }
 
   try {
-    const paymentIntent = await stripe.paymentIntents.retrieve(id);
+    const paymentIntent = await stripe.paymentIntents.retrieve(intentId);
     res.status(200).json(paymentIntent);
   } catch (error) {
     res.status(500).send({ msg: "Failed to capturing payment intent" });
   }
 });
-
 
 module.exports = { paymentRouter };
