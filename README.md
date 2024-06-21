@@ -153,4 +153,31 @@ Clone the repo
   "totalAmount": 6000
 }
 ```
+# Payment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

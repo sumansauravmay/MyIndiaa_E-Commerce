@@ -46,21 +46,6 @@ paymentRouter.post("/payment", authenticate, async (req, res) => {
   }
 });
 
-// paymentRouter.post("/payment/:id", authenticate, async (req, res) => {
-//   const { id } = req.params;
-// console.log("id", id);
-//   if (!id) {
-//     return res.status(401).json({ message: "Payment Intent ID is required." });
-//   }
-//   try {
-//     const paymentIntent = await stripe.paymentIntents.retrieve(id);
-//     res.status(200).json(paymentIntent);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).send({ msg: "Failed to capturing payment intent" });
-//   }
-// });
-
 paymentRouter.post("/payment/:id", authenticate, async (req, res) => {
   const { id: intentId } = req.params;
 
