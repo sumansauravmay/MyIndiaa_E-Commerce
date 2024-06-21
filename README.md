@@ -9,22 +9,22 @@ The application uses Json Web Token(JWT) for authentication, MongoDB for databas
 
 # Features
 
-User authentication and authorization using JWT
-Product management (CRUD operations)
-Order processing
-Integrated with mock api for payment gateways
-Secure data handling and storage
-Performance optimization
+- User authentication and authorization using JWT
+- Product management (CRUD operations)
+- Order processing
+- Integrated with mock api for payment gateways
+- Secure data handling and storage
+- Performance optimization
 
 # Technologies Used
 
-Node.js
-Express.js
-MongoDB
-Mongoose
-JWT (JSON Web Tokens)
-CORS
-JWT
-Bcrypt
-Nodemon
-env
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT (JSON Web Tokens)
+- CORS
+- JWT
+- Bcrypt
+- Nodemon
+- env
