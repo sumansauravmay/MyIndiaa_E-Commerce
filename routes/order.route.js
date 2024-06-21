@@ -1,10 +1,10 @@
 const express = require("express");
-
+const {authenticate}=require("../middlewares/user.middlewares");
 const { OrderModel } = require("../models/order.model");
 
 const orderRouter = express.Router();
 
-orderRouter.post("/orders", async (req, res) => {
+orderRouter.post("/orders", authenticate, async (req, res) => {
   const { user, products, totalAmount } = req.body;
   try {
     const newOrder = new OrderModel({ user, products, totalAmount });
@@ -18,7 +18,7 @@ orderRouter.post("/orders", async (req, res) => {
   }
 });
 
-orderRouter.get("/orders/:userId", async (req, res) => {
+orderRouter.get("/orders/:userId", authenticate, async (req, res) => {
   const { userId } = req.params;
   try {
     const orders = await OrderModel.find({ user: userId });
