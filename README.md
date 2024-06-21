@@ -114,7 +114,7 @@ Clone the repo
 
 
 ```bash
- PATCH /delete/:id
+ Delete /delete/:id
 ```
 
 
