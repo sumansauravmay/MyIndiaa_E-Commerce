@@ -119,7 +119,38 @@ Clone the repo
 
 
 # Orders
+- Get all the order
 
 
+```bash
+ GET /orders
+```
 
+- Get the order by id
+
+
+```bash
+ GET /orders/:orderId
+```
+
+```bash
+ POST /add
+```
+
+- Make a order
+
+```bash
+ POST /orders/
+```
+
+
+```bash
+{
+   "user": "6672a7b525a591f7d7911f2f",
+  "products": [
+    "66733090659d8eccc4386583"
+  ],
+  "totalAmount": 6000
+}
+```
 
