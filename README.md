@@ -69,7 +69,7 @@ Clone the repo
 2. Login (Authentication)
 
 ```bash
-  Register: POST /login
+  Login: POST /login
 ```
 
 
