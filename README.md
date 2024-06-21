@@ -28,3 +28,21 @@ The application uses Json Web Token(JWT) for authentication, MongoDB for databas
 - Bcrypt
 - Nodemon
 - env
+
+# Installation
+
+Clone the repo
+
+```bash
+  git clone https://github.com/sumansauravmay/MyIndiaa_E-Commerce.git
+```
+
+# Deployed Link
+
+```bash
+  https://myindiaa-e-commerce.onrender.com/
+```
+
+
+
+
