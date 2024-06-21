@@ -132,6 +132,7 @@ Clone the repo
 ```bash
  GET /orders/:orderId
 ```
+- Request body
 
 ```bash
  POST /add
@@ -142,7 +143,7 @@ Clone the repo
 ```bash
  POST /orders/
 ```
-
+- Request body
 
 ```bash
 {
@@ -171,6 +172,7 @@ Clone the repo
 ```bash
  POST /payment
 ```
+- Request body
 
 ```bash
  {
