@@ -4,7 +4,7 @@ This is a scalable server-side application for an e-commerce platform, developed
 
 # Description
 
-This is a backend application for an e-commerce platform designed to handle user authentication, product catalog, order processing and Payment with stripe. 
+This is a backend application for an e-commerce platform designed to handle user authentication, product catalog, order processing and Payment with stripe.
 The application uses Json Web Token(JWT) for authentication, MongoDB for database, and integrates with mock payment gateways.
 
 # Features
@@ -45,9 +45,8 @@ Clone the repo
 
 # Start the server:
 
-- npm start 
+- npm start
 - The server will be running at http://localhost:4000
-
 
 # API Documentation
 
@@ -56,6 +55,7 @@ Clone the repo
 ```bash
   Register: POST /register
 ```
+
 ```bash
   {
   "name": "Suman",
@@ -64,14 +64,11 @@ Clone the repo
 }
 ```
 
-
-
 2. Login (Authentication)
 
 ```bash
   Login: POST /login
 ```
-
 
 ```bash
  {
@@ -82,12 +79,11 @@ Clone the repo
 
 3. Products
 
-- Get all the product 
+- Get all the product
 
 ```bash
  GET /
 ```
-
 
 - Add new product
 
@@ -98,16 +94,10 @@ Clone the repo
 - Request body
 
 ```bash
- "image": "https://avatars.githubusercontent.com/u/101393663?s=48&v=4",
+{
+    "image": "https://avatars.githubusercontent.com/u/101393663?s=48&v=4",
   "title": "Jeans",
   "description": "This is jeans",
-  "Price": 4000,
+  "Price": 4000
+}
 ```
-
-
-
-
-
-
-
-
