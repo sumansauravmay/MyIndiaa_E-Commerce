@@ -65,13 +65,14 @@ paymentRouter.post("/payment/:id", authenticate, async (req, res) => {
   const { id: intentId } = req.params;
 
   if (!intentId) {
-    return res.status(400).json({ message: "Payment Intent ID is required." });
+    return res.status(401).json({ message: "Payment ID is required." });
   }
 
   try {
     const paymentIntent = await stripe.paymentIntents.retrieve(intentId);
     res.status(200).json(paymentIntent);
-  } catch (error) {
+  } catch (err) {
+    console.log(err);
     res.status(500).send({ msg: "Failed to capturing payment intent" });
   }
 });
